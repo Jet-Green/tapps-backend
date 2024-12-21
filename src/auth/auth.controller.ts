@@ -181,7 +181,7 @@ export class AuthController {
 		// если accessToken не валиден - сделать новый с помощью refreshToken
 		const userData = await this.AuthService.refresh(refreshToken, token)
 		// console.log(JSON.stringify(userData.user.roles));
-
+		
 		res.cookie(
 			'refreshToken',
 			refreshToken,
@@ -274,13 +274,6 @@ export class AuthController {
 	) {
 		let link = await this.AuthService.sendResetLink(email)
 		return link
-	}
-
-	@HttpCode(HttpStatus.OK)
-	@Get('get-all-users')
-	async getAllUsers(
-	) {
-		return await this.AuthService.getAllUsers()
 	}
 
 	@Post('upload-avatar')

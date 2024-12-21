@@ -15,13 +15,6 @@ export class UserClass {
   @Prop({
     type: String,
     required: true,
-    min: 2,
-  })
-  surname: string
-
-  @Prop({
-    type: String,
-    required: true,
   })
   email: string;
 
@@ -44,18 +37,6 @@ export class UserClass {
     required: false
   })
   avatars: string[];
-
-  @Prop({
-    type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' }],
-    default: [],
-  })
-  myCourses: mongoose.Schema.Types.ObjectId[];
-
-  @Prop({
-    type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' }],
-    default: [],
-  })
-  createdCourses: mongoose.Schema.Types.ObjectId[];
 }
 
 export const UserSchema = SchemaFactory.createForClass(UserClass);

@@ -169,8 +169,4 @@ export class AuthService {
       runValidators: true
     })
   }
-
-  async getAllUsers() {
-    return await this.UserModel.find({}).populate('myCourses')
-  }
 }
