@@ -18,6 +18,7 @@ import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler'
 
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { TappModule } from './tapp/tapp.module';
 
 @Module({
   imports: [
@@ -48,6 +49,7 @@ import { join } from 'path';
     S3Module,
     AppStateModule,
     MailModule,
+    TappModule,
   ],
   controllers: [AppController],
   providers: [AppService,
