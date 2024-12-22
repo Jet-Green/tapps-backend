@@ -37,6 +37,13 @@ export class UserClass {
     required: false
   })
   avatars: string[];
+
+
+  @Prop({
+    type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tapp' }],
+    default: [],
+  })
+  tapps: mongoose.Schema.Types.ObjectId[];
 }
 
 export const UserSchema = SchemaFactory.createForClass(UserClass);
